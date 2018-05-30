@@ -1,0 +1,218 @@
+//Pug and stylus preprocessors, BEM methodology
+
+//Variables
+darkColor = #161b20
+txtColor  = #eee
+txtColorHover = #bbb
+darkRed = #720b0b
+
+//Mixins
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+border-radius()
+  vendor('border-radius', arguments)
+box-shadow()
+  vendor('box-shadow', arguments)
+txt(size, spaceL, weight, transformT, colorT)
+  font-size size
+  letter-spacing spaceL
+  font-weight weight
+  text-transform transformT
+  color colorT
+  overflow hidden
+//Styles
+html, body
+  font-family: 'Roboto', sans-serif;
+  margin 0
+  padding 0
+  width 100%
+  height 100%
+  background darkColor
+  color txtColor
+  overflow hidden
+h1,h2,h3,h4,h5,h6
+  font-weight 400
+  margin 0 0 3px 0
+for num in (1..6) //Here we will get h1-h6
+  h{num}
+    font-size (28 - num*4)px
+    line-height (28 - num*4)px
+    font-weight 400
+    letter-spacing 2px
+a
+  transition ease-in-out 0.3s
+  &:link, &:visited
+    text-decoration inherit
+    color inherit
+    cursor pointer
+  &:hover
+    color txtColorHover
+.noSelect
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+.wrapper
+  width auto
+  margin 0 auto
+.game
+  width 100%
+  height auto
+  float left
+  &__frame
+    width 100%
+    height auto
+    float left
+  &__window
+    width 1000px
+    height auto
+    position absolute
+    z-index 99
+    overflow hidden
+  &__board
+    width 1200px
+    height 500px
+    position relative
+    top 0
+    left 0
+  &--styleBoard
+    background #a31834
+  &--border
+    border 3px solid darkRed
+.title
+  width calc(100% - 64px)
+  height auto
+  float left
+  &__lBox
+    float left
+  &__rBox
+    float right
+  &--style
+    padding 9px 30px 9px 30px
+    border 2px solid darkRed
+    border-bottom none
+.stats
+  width 80px
+  position absolute
+  top 0
+  z-index 3
+  &__first
+    margin-left 30px
+    left 0
+  &__second
+    margin-right 30px
+    right 0
+  &--style
+    background transparent
+    text-transform uppercase
+    font-weight 700
+    letter-spacing 2px
+    font-size 14px
+    line-height 8px
+  &--smaller
+    font-size 12px
+    line-height 6px
+.controlPanel
+  left 0
+  bottom 0
+  position absolute
+  z-index 4
+  &__btn
+    float left
+  &--style
+    padding 3px 5px 3px 5px
+    border-top 1px solid #fff
+    border-right 1px solid #fff
+    cursor pointer
+    transition 0.3s
+    & h5
+      letter-spacing 1px
+    &:hover
+      color txtColorHover
+.controlMobile
+  left 0
+  bottom 23px
+  position absolute
+  z-index 4
+  width 100%
+  &__left, &__right
+    width 100px
+    height auto
+    position relative
+  &__left
+    float left
+    left 0
+    > *
+      float left
+  &__right
+    float right
+    > *
+      float right
+  &__btnCircle
+    width 40px
+    height 40px
+    border-radius(50%)
+  &__btnSpace
+    width 90px
+    height 30px
+  &--styleBtn
+    margin 4px
+    box-sizing border-box
+    border 1px solid #fff
+    text-transform uppercase
+    text-align center
+    padding-top 5px
+  &--largerPadding
+    padding-top 9px
+  &--hidden, &--hidden > *
+    visibility hidden
+
+
+
+
+//Game entities
+.barrier, .player
+  position absolute
+  &--style
+    box-sizing border-box
+    border 1px solid #330202
+.barrier--style
+  background darkRed
+.player
+  &--first
+    background #eac2c2
+  &--second
+    background #683737
+.gainPoint
+  width 20px
+  height 20px
+  position absolute
+  &--style
+    box-sizing border-box
+    border 2px solid #330202
+    border-radius 50%
+    background black
+  &--first
+    background #eac2c2
+  &--second
+    background #683737
+.endPoint
+  width 30px
+  height 8px
+  position absolute
+  &--style
+    box-sizing border-box
+    border 1px solid #330202
+    background #f9f2f2
+.ladder
+  width 6px
+  position absolute
+  &--style
+    box-sizing border-box
+    border 1px solid #330202
+    background #3a2304
