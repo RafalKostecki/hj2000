@@ -183,7 +183,7 @@ const Game = (function() { //Singleton
     setWindow() {
       let width = Board.prototype.theSmallestSize(0);
       let height = Board.prototype.theSmallestSize(1);
-      let windowHeight = window.visualViewport.height;
+      let windowHeight = window.innerHeight;
       let titleHeight = document.getElementById('title').offsetHeight;
 
       gameArt.style.maxWidth = width;

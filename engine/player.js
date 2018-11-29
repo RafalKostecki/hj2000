@@ -120,7 +120,7 @@ const Player = (function() {
           _(this).min++;
         }
         _(this).time = _(this).min + ":" + _(this).sec + ":" + _(this).ms;
-        setTimeout(()=> this.timer(), 10);
+        setTimeout(()=> this.timer(), 100);
       }
 
       game.setStats(1, this, _(this).time)
