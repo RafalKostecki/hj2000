@@ -1,9 +1,9 @@
 const Game = (function() { //Singleton
-  let gameBoard = document.getElementById('gameBoard');
-  let gameWindow = document.getElementById('gameWindow');
-  let gameWrapper = document.getElementById('gameWrapper');
-  let gameArt = document.getElementById('gameArt');
-  let gameFrame = document.getElementById('game');
+  const gameBoard = document.getElementById('gameBoard');
+  const gameWindow = document.getElementById('gameWindow');
+  const gameWrapper = document.getElementById('gameWrapper');
+  const gameArt = document.getElementById('gameArt');
+  const gameFrame = document.getElementById('game');
 
   let instance;
 
@@ -117,8 +117,8 @@ const Game = (function() { //Singleton
     setStats(stats, char, value) {
       if (game.stop) return;
     //  console.log(char)
-      let charContainsClass = char.struct.classList.contains('player--first');
-      let id = charContainsClass ? 0 : 1;
+      const charContainsClass = char.struct.classList.contains('player--first');
+      const id = charContainsClass ? 0 : 1;
 
       switch(stats) {
         case 0: //Points
@@ -169,7 +169,7 @@ const Game = (function() { //Singleton
     };
 
     moveBoard(type, char) {
-      let charContainsClass = char.struct.classList.contains('player--first');
+      const charContainsClass = char.struct.classList.contains('player--first');
       if (!charContainsClass) return; //Prevent move board by two players
 
       let widthDebt = gameBoard.clientWidth-gameWindow.offsetWidth;
@@ -181,8 +181,8 @@ const Game = (function() { //Singleton
     };
 
     setWindow() {
-      let width = Board.prototype.theSmallestSize(0);
-      let height = Board.prototype.theSmallestSize(1);
+      const width = Board.prototype.theSmallestSize(0);
+      const height = Board.prototype.theSmallestSize(1);
       let windowHeight = window.innerHeight;
       let titleHeight = document.getElementById('title').offsetHeight;
 
@@ -196,8 +196,8 @@ const Game = (function() { //Singleton
       }
 
       if(detectMobileDevice()) {
-        let twoBtn = document.getElementById('startTwo');
-        let controlMobile = document.getElementById('controlMobile');
+        const twoBtn = document.getElementById('startTwo');
+        const controlMobile = document.getElementById('controlMobile');
         twoBtn.remove();
 
         controlMobile.classList.toggle('controlMobile--hidden');

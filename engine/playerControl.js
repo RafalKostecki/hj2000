@@ -3,11 +3,11 @@ const PlayerControl = (function() { //Singleton
   let _ = function(instance) {return priv.get(instance)};
 
   function addMobileControl() {
-    let mobileMoveL = document.getElementById('mobileMoveL');
-    let mobileMoveR = document.getElementById('mobileMoveR');
-    let mobileMoveJ = document.getElementById('mobileMoveJ');
-    let mobileMoveU = document.getElementById('mobileMoveU');
-    let mobileMoveD = document.getElementById('mobileMoveD');
+    const mobileMoveL = document.getElementById('mobileMoveL');
+    const mobileMoveR = document.getElementById('mobileMoveR');
+    const mobileMoveJ = document.getElementById('mobileMoveJ');
+    const mobileMoveU = document.getElementById('mobileMoveU');
+    const mobileMoveD = document.getElementById('mobileMoveD');
 
     mobileMoveL.addEventListener('touchstart', () =>
       game.playerControl.keyDown(game.player, 65));

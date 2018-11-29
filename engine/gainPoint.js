@@ -1,7 +1,7 @@
 const GainPoint = (function() {
   let priv = new WeakMap();
   let _ = function(instance) {return priv.get(instance)};
-  let gameBoard = document.getElementById('gameBoard');
+  const gameBoard = document.getElementById('gameBoard');
   let idCounter = 0;
 
 
@@ -34,8 +34,8 @@ const GainPoint = (function() {
     };
 
     gained(char) {
-      let charContainsClass = char.struct.classList.contains('player--first');
-      let id = charContainsClass ? 0 : 1;
+      const charContainsClass = char.struct.classList.contains('player--first');
+      const id = charContainsClass ? 0 : 1;
       let style;
       _(this).gained++;
 

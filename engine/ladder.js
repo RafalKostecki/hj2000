@@ -1,5 +1,5 @@
 const Ladder = (function() {
-  let gameBoard = document.getElementById('gameBoard');
+  const gameBoard = document.getElementById('gameBoard');
 
   return class {
     constructor() {

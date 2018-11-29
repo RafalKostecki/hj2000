@@ -1,7 +1,7 @@
 const Board = (function() {
   let priv = new WeakMap();
   let _ = function(instance) {return priv.get(instance)};
-  let gameBoard = document.getElementById('gameBoard');
+  const gameBoard = document.getElementById('gameBoard');
 
   /*let levels = [
     [[playerX, playerY(start position), board width, board height], Player and board settings
@@ -10,7 +10,7 @@ const Board = (function() {
     [className, width, height, x, y], [another structure]],
     [another level structs]
   ] */
-  let levels = [
+  const levels = [
     [ //Level 1
       //Player and board settings
       [40, 70, 1200, 500],
@@ -150,7 +150,7 @@ const Board = (function() {
     };
 
     createBoard() {
-      let lvl = _(this).level;
+      const lvl = _(this).level;
 
       this.addGainPoints(lvl);
       this.setEndPoint();

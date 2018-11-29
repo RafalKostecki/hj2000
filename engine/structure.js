@@ -1,5 +1,5 @@
 const Structure = (function() {
-    let gameBoard = document.getElementById('gameBoard');
+    const gameBoard = document.getElementById('gameBoard');
     let idCounter = 0;
 
     return class {
